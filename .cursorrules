@@ -1,0 +1,84 @@
+# Prompt Bookmarks Project
+
+## Current Task: MCP CRUD Operations - COMPLETED
+
+### Task Description
+
+Create a tool called "Prompt Bookmarks" that helps store and organize prompts with:
+
+- Hierarchical folder structure
+- Tag system (starting with AI tool tags, extensible)
+- Local MCP server for integration with AI tools (Claude, ChatGPT, Perplexity, etc.)
+- Easy access and management of stored prompts
+
+### Task Breakdown
+
+[X] 1. Project architecture design
+[X] 2. Set up basic project structure
+[X] 3. Design data models (prompts, folders, tags)
+[X] 4. Implement MCP server
+[X] 5. Create prompt management CLI/API
+[X] 6. Add folder hierarchy support
+[X] 7. Implement tagging system
+[ ] 8. Create import/export functionality
+[X] 9. Add search and filtering capabilities
+[ ] 10. Documentation and testing
+
+### Architecture Notes
+
+- Use MCP (Model Context Protocol) for AI tool integration
+- SQLite for local data storage (lightweight, no dependencies)
+- Python for implementation (good MCP libraries available)
+- JSON for prompt storage format
+- CLI interface for management
+
+### Lessons
+
+- Use python venv in ./venv for development
+- Check for 'uv' availability before falling back to pip
+- Include debugging info in program output
+- Read files before editing them
+- In Pydantic v2, use `pattern` instead of `regex` for field validation
+- Avoid naming functions with Python built-in names like `list` - it causes shadowing issues and unexpected behavior
+- When debugging Click CLI issues, check for function name conflicts that might cause command routing problems
+
+## Scratchpad
+
+✅ MAJOR MILESTONE COMPLETED: Simplified Stdio-Only MCP Integration
+
+The project has been simplified to focus purely on Claude Desktop integration with a clean stdio-based MCP server. Key accomplishments:
+
+**Clean Architecture:**
+
+- Single stdio-based MCP server
+- Direct Claude Desktop integration via JSON-RPC over stdin/stdout
+- Simplified command structure: `prompt-bookmarks serve` for everything
+
+**Full CRUD Operations:**
+
+1. **Create** new prompts, folders, and tags from within AI conversations
+2. **Search** and browse existing prompts seamlessly  
+3. **Update** prompts in real-time during conversations
+4. **Delete** outdated content without leaving the AI interface
+5. **Organize** with folders and tags
+6. **Template** functionality with variable substitution
+
+**Technical Features:**
+
+- 15 comprehensive MCP tools covering all CRUD operations
+- Proper JSON-RPC protocol implementation
+- Protocol version 2025-06-18 compatibility
+- Robust error handling and validation
+- Clean documentation and examples
+- Minimal dependencies (no FastAPI/uvicorn needed)
+
+**User Experience:**
+
+- One simple command: `prompt-bookmarks serve`
+- Direct Claude Desktop integration
+- Real-time prompt management during conversations
+- Template variables for dynamic prompts
+- Single comprehensive README.md documentation
+- One-click installation via .mcpb extension file
+
+This makes Prompt Bookmarks a truly integrated part of the AI workflow with a clean, focused architecture, streamlined documentation, and effortless installation via multiple methods.

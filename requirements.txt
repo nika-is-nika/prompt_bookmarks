@@ -1,0 +1,9 @@
+# Core dependencies
+click>=8.0.0              # CLI framework
+sqlalchemy>=2.0.0         # Database ORM
+pydantic>=2.0.0          # Data validation
+
+# Utilities
+rich>=13.0.0             # Beautiful terminal output
+python-dotenv>=1.0.0     # Environment variables
+pyyaml>=6.0              # YAML support

@@ -1,0 +1,2 @@
+[console_scripts]
+prompt-bookmarks = prompt_bookmarks.cli:main

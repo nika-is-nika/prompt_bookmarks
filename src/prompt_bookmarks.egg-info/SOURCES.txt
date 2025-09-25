@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/prompt_bookmarks/__init__.py
+src/prompt_bookmarks/cli.py
+src/prompt_bookmarks/database.py
+src/prompt_bookmarks/mcp_server.py
+src/prompt_bookmarks/models.py
+src/prompt_bookmarks.egg-info/PKG-INFO
+src/prompt_bookmarks.egg-info/SOURCES.txt
+src/prompt_bookmarks.egg-info/dependency_links.txt
+src/prompt_bookmarks.egg-info/entry_points.txt
+src/prompt_bookmarks.egg-info/requires.txt
+src/prompt_bookmarks.egg-info/top_level.txt

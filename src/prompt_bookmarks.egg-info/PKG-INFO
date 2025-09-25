@@ -1,0 +1,96 @@
+Metadata-Version: 2.4
+Name: prompt-bookmarks
+Version: 0.1.0
+Summary: A tool for organizing and accessing prompts across AI tools via MCP
+Author-email: User <user@example.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.0.0
+Requires-Dist: sqlalchemy>=2.0.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: uvicorn>=0.20.0
+Requires-Dist: mcp>=1.0.0
+Requires-Dist: httpx>=0.25.0
+Requires-Dist: rich>=13.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: pyyaml>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+
+# Prompt Bookmarks
+
+A tool for organizing and accessing prompts across AI tools via Model Context Protocol (MCP).
+
+## Features
+
+- 📁 **Hierarchical Organization** - Organize prompts in folders and subfolders
+- 🏷️ **Flexible Tagging** - Tag prompts by AI tool, topic, or custom categories
+- 🔌 **MCP Integration** - Local MCP server for seamless AI tool integration
+- 🤖 **Multi-AI Support** - Works with Claude, ChatGPT, Perplexity, and more
+- 💻 **CLI Interface** - Easy command-line management
+- 🔍 **Search & Filter** - Find prompts quickly by content, tags, or folders
+- 📦 **Import/Export** - Backup and share prompt collections
+
+## Quick Start
+
+1. **Install**:
+   ```bash
+   pip install -e .
+   ```
+
+2. **Initialize**:
+   ```bash
+   prompt-bookmarks init
+   ```
+
+3. **Add a prompt**:
+   ```bash
+   prompt-bookmarks add "My prompt" --folder "AI/Coding" --tags "python,debugging"
+   ```
+
+4. **Start MCP server**:
+   ```bash
+   prompt-bookmarks serve
+   ```
+
+## Usage
+
+### CLI Commands
+
+- `init` - Initialize the prompt database
+- `add` - Add a new prompt
+- `list` - List prompts with filtering
+- `search` - Search prompts by content
+- `edit` - Edit an existing prompt
+- `delete` - Delete a prompt
+- `serve` - Start the MCP server
+
+### MCP Integration
+
+Configure your AI tool to connect to the local MCP server at `http://localhost:8000/mcp` to access your prompts directly from the AI interface.
+
+## Development
+
+1. Clone and set up:
+   ```bash
+   git clone <repo>
+   cd prompt_bookmarks
+   python -m venv venv
+   source venv/bin/activate  # or `venv\Scripts\activate` on Windows
+   pip install -e ".[dev]"
+   ```
+
+2. Run tests:
+   ```bash
+   pytest
+   ```
+
+## License
+
+MIT License - see LICENSE file for details.

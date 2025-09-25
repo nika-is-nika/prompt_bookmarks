@@ -1,0 +1,96 @@
+{
+  "manifest_version": "0.2",
+  "name": "prompt-bookmarks",
+  "version": "1.0.1",
+  "description": "Store, organize and manage prompts with hierarchical folders, tags, and variable substitution. Seamlessly integrate with AI tools through MCP.",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "license": "MIT",
+  "server": {
+    "type": "python",
+    "entry_point": "run_server:main",
+    "mcp_config": {
+      "command": "/usr/bin/python3",
+      "args": ["run_server.py"],
+      "env": {}
+    }
+  },
+  "keywords": [
+    "prompts",
+    "bookmarks", 
+    "templates",
+    "mcp",
+    "ai-tools",
+    "organization",
+    "productivity"
+  ],
+  "homepage": "https://github.com/your-repo/prompt_bookmarks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-repo/prompt_bookmarks.git"
+  },
+  "tools": [
+    {
+      "name": "search_prompts",
+      "description": "Search for prompts by content, tags, or folder"
+    },
+    {
+      "name": "create_prompt", 
+      "description": "Create new prompts with content, tags, and folder organization"
+    },
+    {
+      "name": "get_prompt",
+      "description": "Retrieve a specific prompt by ID"
+    },
+    {
+      "name": "update_prompt",
+      "description": "Update existing prompt content, metadata, or organization"
+    },
+    {
+      "name": "delete_prompt", 
+      "description": "Remove prompts from the system"
+    },
+    {
+      "name": "use_prompt_template",
+      "description": "Use prompts with variable substitution"
+    },
+    {
+      "name": "find_and_use_prompt",
+      "description": "Search and immediately use prompts with variables"
+    },
+    {
+      "name": "get_folders",
+      "description": "List all folder structures"
+    },
+    {
+      "name": "create_folder",
+      "description": "Create new folder hierarchies"
+    },
+    {
+      "name": "update_folder",
+      "description": "Rename folders and update child paths"
+    },
+    {
+      "name": "delete_folder",
+      "description": "Remove folders and reorganize content"
+    },
+    {
+      "name": "get_tags",
+      "description": "List all available tags"
+    },
+    {
+      "name": "create_tag",
+      "description": "Create new tags with categories and colors"
+    },
+    {
+      "name": "update_tag",
+      "description": "Update tag properties"
+    },
+    {
+      "name": "delete_tag",
+      "description": "Remove tags from the system"
+    }
+  ]
+}
