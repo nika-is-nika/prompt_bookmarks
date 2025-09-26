@@ -28,12 +28,13 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
 5. The extension automatically installs Python dependencies
 6. Enjoy! ✨
 
-### 🔌 Manual MCP Setup (Perplexity & Others)
+### 🔌 Manual MCP Setup (Perplexity)
 
 **For Perplexity or other MCP-compatible tools:**
 
-1. Clone or download this repository to your local machine
+1. Clone or download this repository to your local machine.
 2. Install Python dependencies:
+
    ```bash
    cd prompt_bookmarks
    python -m venv venv
@@ -41,7 +42,9 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
    pip install -r requirements.txt
    python install.py
    ```
-3. Add to your MCP configuration:
+
+3. Navigate to Connectors in settings and add new conenctor with the following:
+
    ```json
    {
      "args": ["/path/to/prompt_bookmarks/index.js"],
@@ -50,8 +53,11 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
      "useBuiltInNode": true
    }
    ```
-4. Replace `/path/to/prompt_bookmarks` with your actual installation path
-5. Restart your AI tool and enjoy shared prompts! ✨
+
+4. Replace `/path/to/prompt_bookmarks` with your actual installation path.
+5. Give the connector a name.
+6. Click Save.
+7. Enjoy! ✨
 
 ### ⚙️ Development Installation
 
@@ -144,21 +150,6 @@ Once configured, you can manage prompts directly from Claude Desktop conversatio
 - `create_tag` - Create tags with categories and colors
 - `update_tag` - Update tag name, category, or color
 - `delete_tag` - Remove tags from the system
-
-## Cross-Tool Compatibility
-
-Prompt Bookmarks uses a **shared database approach** - all AI tools that connect to the MCP server access the same prompt library stored at `~/.prompt_bookmarks/prompts.db`. This means:
-
-✅ **Universal Access** - Create prompts in Claude Desktop, use them immediately in Perplexity
-✅ **Real-time Sync** - Changes appear instantly across all connected tools
-✅ **Single Management** - Organize once, benefit everywhere
-✅ **No Duplication** - One prompt library instead of separate collections per tool
-
-**Example Workflow:**
-1. Create a "Code Review" prompt in Claude Desktop
-2. Switch to Perplexity and search for "code review"
-3. Use the same prompt with different variables
-4. Updates made in either tool sync automatically
 
 ## Variable Substitution
 
