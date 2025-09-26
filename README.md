@@ -13,9 +13,19 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
 - **Real-time Updates** - Changes sync instantly between CLI and MCP interfaces
 - **Minimal Dependencies** - Clean architecture with only essential packages
 
-## Quick Start
+## Installation
 
-### 🚀 One-Click Installation (Recommended)
+### 🚀 DXT Package (Recommended)
+
+**For Claude Desktop users:**
+
+1. Download `prompt-bookmarks.dxt` from releases
+2. Run: `dxt install prompt-bookmarks.dxt`
+3. The extension automatically installs Python dependencies
+4. Restart Claude Desktop
+5. Done! ✨
+
+### 📦 One-Click Bundle (Alternative)
 
 **Claude Desktop Extension (.mcpb):**
 
@@ -24,7 +34,7 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
 3. Restart Claude Desktop
 4. Done! ✨
 
-### ⚙️ Manual Installation
+### ⚙️ Development Installation
 
 1. **Install**:
 
@@ -217,6 +227,16 @@ Best regards,
    ```bash
    pytest
    ```
+
+## Requirements
+
+- **Python 3.8+** (automatically managed in DXT package)
+- **Node.js 16+** (for DXT package execution)
+- **Dependencies** are automatically installed during setup
+
+## Support
+
+For issues and feature requests, visit: <https://github.com/veronikatamaioflores/prompt_bookmarks>
 
 ## License
 
