@@ -13,7 +13,7 @@
     "entry_point": "run_server:main",
     "mcp_config": {
       "command": "/Users/veronikatamaioflores/rw_git/prompt_bookmarks/venv/bin/python",
-      "args": ["run_server.py"],
+      "args": ["./run_server.py"],
       "env": {}
     }
   },
