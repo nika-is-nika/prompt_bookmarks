@@ -8,7 +8,7 @@
     "name": "Veronika Tamaio Flores",
     "email": "veronika.tamaioflores@example.com"
   },
-  "icon": "favicon.png",
+  "icon": "icon.png",
   "license": "MIT",
   "server": {
     "type": "node",
