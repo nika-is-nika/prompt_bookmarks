@@ -1,9 +1,24 @@
 {
+  "dxt_version": "0.2",
   "name": "Prompt Bookmarks",
+  "display_name": "Prompt Bookmarks",
   "version": "1.0.1",
   "description": "Store, organize and manage prompts with hierarchical folders, tags, and variable substitution. Seamlessly integrate with AI tools through MCP.",
-  "author": "Veronika Tamaio Flores",
+  "author": {
+    "name": "Veronika Tamaio Flores",
+    "email": "veronika.tamaioflores@example.com"
+  },
+  "icon": "favicon.png",
   "license": "MIT",
+  "server": {
+    "type": "node",
+    "entry_point": "index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/index.js"],
+      "env": {}
+    }
+  },
   "keywords": [
     "prompts",
     "bookmarks",

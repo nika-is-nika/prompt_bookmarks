@@ -42,6 +42,15 @@ Create a tool called "Prompt Bookmarks" that helps store and organize prompts wi
 - Avoid naming functions with Python built-in names like `list` - it causes shadowing issues and unexpected behavior
 - When debugging Click CLI issues, check for function name conflicts that might cause command routing problems
 
+### DXT Packaging Lessons
+
+- **Node.js Wrapper Approach**: Create Node.js wrapper (`index.js`) that calls Python server to make DXT packages more portable and avoid Python path issues
+- **Dependency Management**: Automatic Python dependency installation via Node.js postinstall scripts prevents "module not found" errors
+- **JSON-RPC Communication**: Keep stdout clean for JSON-RPC - redirect all logging/installation messages to stderr to avoid JSON parsing errors
+- **Manifest Configuration**: Use `${__dirname}/index.js` in DXT manifest for portable paths that work across different installation environments
+- **Package Structure**: Include both `package.json` (Node.js) and `requirements.txt` (Python) for hybrid package management
+- **Error Handling**: Check dependencies at runtime and auto-install if missing, with clear error messages for manual fallback
+
 ## Scratchpad
 
 ✅ MAJOR MILESTONE COMPLETED: Simplified Stdio-Only MCP Integration
@@ -82,3 +91,28 @@ The project has been simplified to focus purely on Claude Desktop integration wi
 - One-click installation via .mcpb extension file
 
 This makes Prompt Bookmarks a truly integrated part of the AI workflow with a clean, focused architecture, streamlined documentation, and effortless installation via multiple methods.
+
+✅ MAJOR MILESTONE COMPLETED: DXT Package Distribution
+
+Successfully created a portable DXT package for easy installation and distribution:
+
+**DXT Package Features:**
+- **Hybrid Architecture**: Node.js wrapper calling Python MCP server for maximum compatibility
+- **Automatic Dependencies**: Auto-installs Python packages on first run via npm postinstall scripts
+- **Clean Communication**: Proper JSON-RPC protocol handling with stderr for logs, stdout for data
+- **Portable Installation**: Uses `${__dirname}` paths for cross-platform compatibility
+- **Professional Packaging**: Complete manifest.json with proper metadata, icon, and tool descriptions
+
+**Installation Methods:**
+1. **DXT Package**: `dxt install prompt-bookmarks.dxt` (single file distribution)
+2. **MCP Manifest**: Direct Claude Desktop integration via manifest files
+3. **Development**: Local installation for development and testing
+
+**Key Technical Achievements:**
+- Resolved Python dependency installation issues
+- Fixed JSON-RPC communication contamination
+- Created robust error handling and dependency checking
+- Established portable cross-platform execution
+- Successfully tested end-to-end functionality
+
+The project now has enterprise-ready distribution capabilities with multiple installation paths for different user types and deployment scenarios.

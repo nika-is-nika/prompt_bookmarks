@@ -1,0 +1,36 @@
+{
+  "name": "prompt-bookmarks",
+  "version": "1.0.1",
+  "description": "Store, organize and manage prompts with hierarchical folders, tags, and variable substitution. Seamlessly integrate with AI tools through MCP.",
+  "main": "index.js",
+  "bin": {
+    "prompt-bookmarks": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "install-python-deps": "node install_deps.js",
+    "postinstall": "node install_deps.js"
+  },
+  "keywords": [
+    "prompts",
+    "bookmarks",
+    "templates",
+    "mcp",
+    "ai-tools",
+    "organization",
+    "productivity"
+  ],
+  "author": "Veronika Tamaio Flores",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/veronikatamaioflores/prompt_bookmarks"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "python3": "*"
+  }
+}

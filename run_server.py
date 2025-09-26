@@ -5,6 +5,7 @@ This script ensures the package is properly set up and runs the server.
 """
 import sys
 import os
+import asyncio
 from pathlib import Path
 
 def main():
@@ -32,7 +33,7 @@ def main():
 
         # Run the MCP server
         server = MCPStdioServer(str(db_path))
-        server.run()
+        asyncio.run(server.run())
 
     except ImportError as e:
         print(f"Error importing prompt_bookmarks: {e}", file=sys.stderr)

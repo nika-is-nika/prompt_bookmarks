@@ -2,6 +2,7 @@
 click>=8.0.0              # CLI framework
 sqlalchemy>=2.0.0         # Database ORM
 pydantic>=2.0.0          # Data validation
+mcp>=1.0.0               # Model Context Protocol
 
 # Utilities
 rich>=13.0.0             # Beautiful terminal output
