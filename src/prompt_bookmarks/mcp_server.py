@@ -92,12 +92,23 @@ class MCPStdioServer:
             }
     
     async def handle_initialize(self, request_id: Any, params: Dict[str, Any]) -> Dict[str, Any]:
-        """Handle initialize request."""
+        """Handle initialize request with version compatibility."""
+        # Get client's requested protocol version
+        client_protocol_version = params.get("protocolVersion", "2025-06-18")
+
+        # Support both Claude (2025-06-18) and Perplexity (2024-11-05) versions
+        supported_versions = ["2024-11-05", "2025-06-18"]
+
+        # Use the client's requested version if supported, otherwise use latest
+        protocol_version = client_protocol_version if client_protocol_version in supported_versions else "2025-06-18"
+
+        self.logger.info(f"Client requested protocol version: {client_protocol_version}, using: {protocol_version}")
+
         return {
             "jsonrpc": "2.0",
             "id": request_id,
             "result": {
-                "protocolVersion": "2025-06-18",
+                "protocolVersion": protocol_version,
                 "capabilities": {
                     "resources": {"subscribe": True, "listChanged": False},
                     "tools": {}

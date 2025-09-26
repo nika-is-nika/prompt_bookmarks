@@ -5,7 +5,15 @@ const path = require('path');
 const fs = require('fs');
 
 function findPythonExecutable() {
-    // Try different Python executables in order of preference
+    // First try the virtual environment python
+    const scriptDir = __dirname;
+    const venvPython = path.join(scriptDir, 'venv', 'bin', 'python');
+
+    if (fs.existsSync(venvPython)) {
+        return venvPython;
+    }
+
+    // Fall back to system Python
     const pythonCandidates = ['python3', 'python'];
 
     for (const candidate of pythonCandidates) {
@@ -46,6 +54,7 @@ function installPythonDependencies(pythonExe, scriptDir) {
     return new Promise((resolve, reject) => {
         const requirementsPath = path.join(scriptDir, 'requirements.txt');
 
+        // Use the same Python executable (which should be from venv) for pip
         const installProcess = spawn(pythonExe, ['-m', 'pip', 'install', '-r', requirementsPath], {
             cwd: scriptDir,
             stdio: ['ignore', 'ignore', 'inherit'] // Redirect stdout to devnull, stderr to parent
