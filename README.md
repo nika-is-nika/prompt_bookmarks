@@ -8,6 +8,8 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
 - **Flexible Tagging** - Tag prompts by topic, tool, or custom categories
 - **Claude Desktop Integration** - Direct stdio-based MCP integration for seamless access
 - **Template Variables** - Use prompts with variable substitution like `{name}` or `{{project}}`
+- **Multi-Tool Support** - Works with Claude Desktop, Perplexity, and other MCP-compatible AI tools
+- **Shared Database** - Single prompt library accessible across all connected AI tools
 - **CLI Interface** - Command-line management for all operations
 - **Search & Filter** - Find prompts quickly by content, tags, or folders
 - **Real-time Updates** - Changes sync instantly between CLI and MCP interfaces
@@ -15,7 +17,7 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
 
 ## Installation
 
-### 🚀 DXT Package (Recommended)
+### 🚀 DXT Package (Claude Desktop)
 
 **For Claude Desktop users:**
 
@@ -25,6 +27,31 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
 4. Click Install and then enable the Extension with a toggle.
 5. The extension automatically installs Python dependencies
 6. Enjoy! ✨
+
+### 🔌 Manual MCP Setup (Perplexity & Others)
+
+**For Perplexity or other MCP-compatible tools:**
+
+1. Clone or download this repository to your local machine
+2. Install Python dependencies:
+   ```bash
+   cd prompt_bookmarks
+   python -m venv venv
+   source venv/bin/activate  # or `venv\Scripts\activate` on Windows
+   pip install -r requirements.txt
+   python install.py
+   ```
+3. Add to your MCP configuration:
+   ```json
+   {
+     "args": ["/path/to/prompt_bookmarks/index.js"],
+     "command": "node",
+     "env": {},
+     "useBuiltInNode": true
+   }
+   ```
+4. Replace `/path/to/prompt_bookmarks` with your actual installation path
+5. Restart your AI tool and enjoy shared prompts! ✨
 
 ### ⚙️ Development Installation
 
@@ -117,6 +144,21 @@ Once configured, you can manage prompts directly from Claude Desktop conversatio
 - `create_tag` - Create tags with categories and colors
 - `update_tag` - Update tag name, category, or color
 - `delete_tag` - Remove tags from the system
+
+## Cross-Tool Compatibility
+
+Prompt Bookmarks uses a **shared database approach** - all AI tools that connect to the MCP server access the same prompt library stored at `~/.prompt_bookmarks/prompts.db`. This means:
+
+✅ **Universal Access** - Create prompts in Claude Desktop, use them immediately in Perplexity
+✅ **Real-time Sync** - Changes appear instantly across all connected tools
+✅ **Single Management** - Organize once, benefit everywhere
+✅ **No Duplication** - One prompt library instead of separate collections per tool
+
+**Example Workflow:**
+1. Create a "Code Review" prompt in Claude Desktop
+2. Switch to Perplexity and search for "code review"
+3. Use the same prompt with different variables
+4. Updates made in either tool sync automatically
 
 ## Variable Substitution
 
