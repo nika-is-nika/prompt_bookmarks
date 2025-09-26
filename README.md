@@ -20,19 +20,11 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
 **For Claude Desktop users:**
 
 1. Download `prompt-bookmarks.dxt` from releases
-2. Run: `dxt install prompt-bookmarks.dxt`
-3. The extension automatically installs Python dependencies
-4. Restart Claude Desktop
-5. Done! ✨
-
-### 📦 One-Click Bundle (Alternative)
-
-**Claude Desktop Extension (.mcpb):**
-
-1. Download `prompt-bookmarks.mcpb` from releases
-2. Double-click the file to install
-3. Restart Claude Desktop
-4. Done! ✨
+2. Open Claude Desktop and navigate to Settings -> Extensions.
+3. Drag the dxt file to Claude Desktop.
+4. Click Install and then enable the Extension with a toggle.
+5. The extension automatically installs Python dependencies
+6. Enjoy! ✨
 
 ### ⚙️ Development Installation
 
@@ -135,12 +127,14 @@ Prompts support dynamic variables in two formats:
 
 **Example:**
 
+```bash
 Hello {name},
 
 Thank you for your interest in {product}.
 
 Best regards,
 {sender}
+```
 
 **Usage:** *"Use prompt ID 5 with variables name='John', product='our software', sender='Sarah'"*
 
