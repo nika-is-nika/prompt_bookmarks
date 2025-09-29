@@ -28,6 +28,16 @@ A tool for organizing and accessing prompts across AI tools via Model Context Pr
 5. The extension automatically installs Python dependencies
 6. Enjoy! ✨
 
+### ⚡ Claude Code Installation
+
+**For Claude Code users (fastest method):**
+
+```bash
+claude mcp add prompt_bookmarks node /your-path/prompt_bookmarks/index.js
+```
+
+This automatically configures the MCP server in Claude Code with the correct path.
+
 ### 🔌 Manual MCP Setup (Perplexity)
 
 **For Perplexity or other MCP-compatible tools:**
